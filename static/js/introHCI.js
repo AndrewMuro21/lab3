@@ -13,16 +13,19 @@ function initializePage() {
 		e.preventDefault();
 		$('.jumbotron h1').text("Javascript has taken control");
 		$("#testjs").text("Please wait...");	
-		$("p").toggleClass("active");
+		$(".jumbotron p").toggleClass("active");
 	});
 
 	// Add any additional listeners here
 	// example: $("#div-id").click(functionToCall);
 	$("a.thumbnail").click(projectClick);
+	$(".project .img").click(p1Animate);
 }
 
 
+
 function projectClick(e) { 
+	console.log("Project clicked")
     // prevent the page from reloading      
     e.preventDefault();
     // In an event handler, $(this) refers to      
@@ -36,4 +39,10 @@ function projectClick(e) { 
     		$(description).fadeOut();
        		//description.html("<p>Stop clicking on me! You just did it at " + (new Date()) + "</p>");
        	}
+    }
+
+function p1Animate(e) {
+	e.preventDefault();
+    //animate project 1
+    $(this).animate({"width":500}, 1000);
     }
